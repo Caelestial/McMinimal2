@@ -7,3 +7,12 @@ function getTelegramUserId() {
         return null;
     }
 }
+
+    // Після завантаження сторінки
+    window.onload = function () {
+        const userId = getTelegramUserId();
+        if (userId) {
+            // Виклик функції в Unity з переданим userId
+            SendMessage('GameObjectName', 'UnityFunctionName', userId);
+        }
+    }
